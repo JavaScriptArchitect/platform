@@ -18,16 +18,21 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
+  
     "lib": [
       "ES2022",
       "dom"
     ],
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "allowJs": true // Added allowJs option
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "include": [
+    "src"
+  ]
 }

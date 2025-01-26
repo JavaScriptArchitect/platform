@@ -1,0 +1,12 @@
+{
+  "resourceName": "dynamocloudai",
+  "tableName": "informatics",
+  "partitionKey": {
+    "fieldName": "sessionId",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": [
+    "dynamocloudaiTrigger57cd2013"
+  ]
+}

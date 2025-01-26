@@ -1,0 +1,24 @@
+<div class="behavior-files-container">
+    <div class="form-group">
+      <label for="inputText">Prompt</label>
+      <input type="text" id="inputText" [(ngModel)]="inputText" />
+    </div>
+    <div class="form-group">
+      <label for="fileUpload">Upload File</label>
+      <input type="file" id="fileUpload" (change)="onFileSelected($event)" />
+    </div>
+    <button (click)="onSubmit()" class="submit-button">Submit</button>
+  
+    <div *ngIf="loading" class="loading-indicator">Loading...</div>
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+  
+    <div class="result-container" *ngIf="result">
+      <div *ngIf="isImage(getS3Url(result.fileUrl))">
+        <img [src]="getS3Url(result.fileUrl)" alt="Uploaded File" class="result-file" />
+      </div>
+      <div *ngIf="!isImage(getS3Url(result.fileUrl))">
+        <a [href]="getS3Url(result.fileUrl)" class="result-file" target="_blank">View Uploaded File</a>
+      </div>
+    </div>
+  </div>
+  

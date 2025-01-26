@@ -1,0 +1,149 @@
+{
+  "api": {},
+  "auth": {
+    "behaviorinformatics280f8562": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "function": {
+    "S3Trigger8d51f8c6": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "behaviorsLambda": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "dynamocloudaiTrigger57cd2013": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "dynamocloudai"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "lambdaAlpha": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_S3Trigger8d51f8c6_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "S3Trigger8d51f8c6"
+        }
+      ]
+    },
+    "AMPLIFY_function_S3Trigger8d51f8c6_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "S3Trigger8d51f8c6"
+        }
+      ]
+    },
+    "AMPLIFY_function_behaviorsLambda_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "behaviorsLambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_behaviorsLambda_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "behaviorsLambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_dynamocloudaiTrigger57cd2013_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "dynamocloudaiTrigger57cd2013"
+        }
+      ]
+    },
+    "AMPLIFY_function_dynamocloudaiTrigger57cd2013_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "dynamocloudaiTrigger57cd2013"
+        }
+      ]
+    },
+    "AMPLIFY_function_lambdaAlpha_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "lambdaAlpha"
+        }
+      ]
+    },
+    "AMPLIFY_function_lambdaAlpha_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "lambdaAlpha"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "cloudaiinformatics": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "LambdaExecutionRole"
+          ],
+          "category": "function",
+          "resourceName": "S3Trigger8d51f8c6"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
+    },
+    "dynamocloudai": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}
