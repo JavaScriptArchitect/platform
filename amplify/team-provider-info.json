@@ -38,7 +38,7 @@
         },
         "lambdaAlpha": {
           "deploymentBucketName": "amplify-behaviorinformatics-alphaai-0a242-deployment",
-          "s3Key": "amplify-builds/lambdaAlpha-4c6c736c38494d4f4644-build.zip"
+          "s3Key": "amplify-builds/lambdaAlpha-7472324e4a3937364631-build.zip"
         },
         "S3Trigger8d51f8c6": {
           "deploymentBucketName": "amplify-behaviorinformatics-alphaai-0a242-deployment",

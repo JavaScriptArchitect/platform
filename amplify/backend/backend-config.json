@@ -59,6 +59,13 @@
       "service": "Lambda"
     }
   },
+  "interactions": {
+    "lexbehave": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lex"
+    }
+  },
   "parameters": {
     "AMPLIFY_function_S3Trigger8d51f8c6_deploymentBucketName": {
       "usedBy": [
