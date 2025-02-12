@@ -40,6 +40,13 @@ export type AmplifyDependentResourcesAttributes = {
       "Region": "string"
     }
   },
+  "interactions": {
+    "lexbehave": {
+      "BotName": "string",
+      "FunctionArn": "string",
+      "Region": "string"
+    }
+  },
   "storage": {
     "cloudaiinformatics": {
       "BucketName": "string",

@@ -1,28 +1,41 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module'; // Assuming you have a routing module
-import { AppComponent } from './app.component';
-import { BehaviorFilesComponent } from './behavior-files/behavior-files.component';
-import { TodosComponent } from './todos/todos.component'; // Assuming you have a TodosComponent
-import { BehaviorService } from './services/behavior.service'; // Import the BehaviorService
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { OcrSentimentService } from './services/ocrlambda.service';
+// AWS Amplify Configuration
 import { Amplify } from 'aws-amplify';
 import awsconfig from '../aws-exports';
 
+// Configure Amplify
 Amplify.configure(awsconfig);
+
+
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { AppComponent } from './app.component';
+
+
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    BehaviorFilesComponent,
-    TodosComponent // Declare your components
+    AppComponent
+  
   ],
   imports: [
     BrowserModule,
-    FormsModule, // Add FormsModule here
-    AppRoutingModule // Import the AppRoutingModule
+    FormsModule,
+    HttpClientModule,
+    AppRoutingModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule
+  
   ],
-  providers: [BehaviorService], // Provide the BehaviorService
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

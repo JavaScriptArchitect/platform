@@ -38,7 +38,7 @@
         },
         "lambdaAlpha": {
           "deploymentBucketName": "amplify-behaviorinformatics-alphaai-0a242-deployment",
-          "s3Key": "amplify-builds/lambdaAlpha-7472324e4a3937364631-build.zip"
+          "s3Key": "amplify-builds/lambdaAlpha-4c4c7948656d517a3847-build.zip"
         },
         "S3Trigger8d51f8c6": {
           "deploymentBucketName": "amplify-behaviorinformatics-alphaai-0a242-deployment",
@@ -55,6 +55,12 @@
       "storage": {
         "cloudaiinformatics": {},
         "dynamocloudai": {}
+      },
+      "interactions": {
+        "lexbehave": {
+          "deploymentBucketName": "amplify-behaviorinformatics-alphaai-0a242-deployment",
+          "s3Key": "amplify-builds/lexbehave-496c417976504e78476e-build.zip"
+        }
       }
     }
   },

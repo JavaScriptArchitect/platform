@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { generateClient } from 'aws-amplify/data';
-import type { Schema } from '../../../amplify/data/resource';
+import type { Schema } from '../../../../amplify/data/resource';
 
 const client = generateClient<Schema>();
 
 @Component({
-  selector: 'app-todos',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './todos.component.html',
-  styleUrl: './todos.component.css',
+  selector: 'app-triggers',
+  templateUrl: './triggers.component.html',
+  styleUrl: './triggers.component.scss',
 })
-export class TodosComponent implements OnInit {
+export class TriggersComponent implements OnInit {
   todos: any[] = [];
 
   ngOnInit(): void {

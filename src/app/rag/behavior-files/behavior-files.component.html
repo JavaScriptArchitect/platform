@@ -13,10 +13,10 @@
     <div *ngIf="error" class="error-message">{{ error }}</div>
   
     <div class="result-container" *ngIf="result">
-      <div *ngIf="isImage(getS3Url(result.fileUrl))">
+      <div *ngIf="isFile(getS3Url(result.fileUrl))">
         <img [src]="getS3Url(result.fileUrl)" alt="Uploaded File" class="result-file" />
       </div>
-      <div *ngIf="!isImage(getS3Url(result.fileUrl))">
+      <div *ngIf="!isFile(getS3Url(result.fileUrl))">
         <a [href]="getS3Url(result.fileUrl)" class="result-file" target="_blank">View Uploaded File</a>
       </div>
     </div>

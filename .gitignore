@@ -1,5 +1,3 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-
 # Compiled output
 /dist
 /tmp
@@ -41,6 +39,11 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# Angular Environment Files
+/src/environments/*.ts
+!/src/environments/environment.ts.example
+!/src/environments/environment.prod.ts.example
+
 # amplify
 .amplify
 amplify_outputs*
@@ -67,3 +70,10 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
+
+# Environment specific files
+environment.ts
+environment.prod.ts
+environment.staging.ts
+environment.local.ts
+environment.*.ts

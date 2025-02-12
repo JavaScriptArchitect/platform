@@ -1,0 +1,104 @@
+.behavior-files-container {
+  width: 700px;
+
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: #000;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.loading-indicator {
+  animation: flashing 1s infinite;
+}
+
+@keyframes flashing {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+#inputText,
+#fileUpload {
+  width: 96%;
+  padding: 10px;
+  margin-top: 5px;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.submit-button {
+  /* background-color: red; */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.submit-button:hover {
+  background-color: darkred;
+}
+
+.loading-indicator {
+  margin-top: 20px;
+  font-size: 18px;
+  color: blue;
+  text-align: center;
+}
+
+.error-message {
+  margin-top: 20px;
+  font-size: 18px;
+  color: red;
+  text-align: center;
+}
+
+
+
+.result-container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Two columns of equal width */
+  gap: 1rem;
+  width: 100%;
+}
+
+
+.result-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+.result-file {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #fff;
+}
+
+.result-item {
+
+  background-color: #222;
+  flex: 1;
+  padding: 1rem;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
+}

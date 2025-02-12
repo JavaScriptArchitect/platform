@@ -130,6 +130,22 @@
           "resourceName": "lambdaAlpha"
         }
       ]
+    },
+    "AMPLIFY_interactions_lexbehave_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "interactions",
+          "resourceName": "lexbehave"
+        }
+      ]
+    },
+    "AMPLIFY_interactions_lexbehave_s3Key": {
+      "usedBy": [
+        {
+          "category": "interactions",
+          "resourceName": "lexbehave"
+        }
+      ]
     }
   },
   "storage": {

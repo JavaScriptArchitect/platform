@@ -5,17 +5,36 @@
   "projects": {
     "amplify-angular-template": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": false,
+          "standalone": true,
+          "flat": false
+        },
+        "@schematics/angular:application": {
+          "standalone": true
+        },
+        "@schematics/angular:library": {
+          "standalone": true
+        },
+        "@schematics/angular:directive": {
+          "standalone": true
+        },
+        "@schematics/angular:pipe": {
+          "standalone": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/amplify-angular-template",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -25,17 +44,37 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "fast-xml-parser",
+              "bowser",
+              "@aws-crypto",
+              "@aws-sdk/client-cognito-identity",
+              "@aws-sdk/credential-provider-cognito-identity",
+              "@aws-sdk/client-s3",
+              "crypto-js/hmac-sha256",
+              "crypto-js/lib-typedarrays",
+              "buffer",
+              "js-cookie",
+              "ulid",
+              "isomorphic-unfetch",
+              "zen-observable",
+              "uuid"
+            ],
+            "vendorChunk": true,
+            "optimization": true,
+            "buildOptimizer": true,
+            "aot": true
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "4mb",
+                  "maximumError": "6mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -43,12 +82,22 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": true,
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "aot": true
             },
             "development": {
+              "buildOptimizer": false,
               "optimization": false,
+              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
@@ -68,7 +117,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "amplify-angular-template:build"
+            "browserTarget": "amplify-angular-template:build"
           }
         },
         "test": {
@@ -84,7 +133,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }

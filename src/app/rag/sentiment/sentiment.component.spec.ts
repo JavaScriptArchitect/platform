@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TodosComponent } from './todos.component';
+import { SentimentComponent } from './sentiment.component';
 
-describe('TodosComponent', () => {
-  let component: TodosComponent;
-  let fixture: ComponentFixture<TodosComponent>;
+describe('SentimentComponent', () => {
+  let component: SentimentComponent;
+  let fixture: ComponentFixture<SentimentComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TodosComponent]
+      imports: [SentimentComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(TodosComponent);
+    fixture = TestBed.createComponent(SentimentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,13 +1,25 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
 import { Amplify } from 'aws-amplify';
-import awsconfig from './aws-exports';
+import awsExports from './aws-exports.js'; // Make sure this file exists
+import { provideRouter } from '@angular/router';
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+import { provideAnimations } from '@angular/platform-browser/animations';
 
+Amplify.configure(awsExports);
 
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-Amplify.configure(awsconfig);
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));
+});
 
