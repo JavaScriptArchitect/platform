@@ -6,8 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RagRoutingModule } from './rag-routing.module';
 import { VideoGenAIComponent } from './video-genai/video-genai.component';
 import { SentimentComponent } from './sentiment/sentiment.component';
-import { TriggersComponent } from './triggers/triggers.component';
-import { BehaviorService } from '../services/behavior.service';
+
+
 import { OcrSentimentService } from '../services/ocrlambda.service';
 import { DatingService } from '../services/dating.service';
 
@@ -61,7 +61,6 @@ import { StorageCloudComponent } from './storage-cloud/storage-cloud.component';
 
 @NgModule({
   declarations: [
-    TriggersComponent,
     SentimentComponent,
     VideoGenAIComponent,
     InsightComponent,
@@ -71,7 +70,6 @@ import { StorageCloudComponent } from './storage-cloud/storage-cloud.component';
     StorageCloudComponent
   ],
   providers: [
-  BehaviorService,
   OcrSentimentService,
   DatingService,
   KnowledgeBaseService,

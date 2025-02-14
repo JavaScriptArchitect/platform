@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { VideoGenAIComponent } from './video-genai/video-genai.component';
 import { SentimentComponent } from './sentiment/sentiment.component';
-import { TriggersComponent } from './triggers/triggers.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { InsightComponent } from './insight/insight.component';
@@ -20,7 +19,6 @@ const routes: Routes = [
   { path: 'insights', component: InsightComponent },
   { path: 'largelambda', component: LongLambdaComponent },
   { path: 'kb', component: KnowledgeComponent },
-  { path: 'triggers', component: TriggersComponent },
   { path: 'video-genai', component: VideoGenAIComponent }
 
 ];
