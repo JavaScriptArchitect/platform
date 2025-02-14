@@ -1,76 +1,68 @@
 import { Injectable } from '@angular/core';
-import { S3Client, PutObjectCommand, S3ServiceException } from '@aws-sdk/client-s3';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, from, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
-import { environment } from '../../environments/environment';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
+
+export interface LambdaResponse {
+  prompt: string;
+  response: string;
+  requestId?: string;
+  tokenCount?: number;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class KnowledgeBaseService {
-  private s3Client: S3Client;
-  private lambdaUrl: string = 'https://j6aysvdvz3pgc7tqnfsbcw3nma0dgwgr.lambda-url.us-east-1.on.aws/';
-  public s3Bucket: string = environment.S3_BUCKET;
+  private lambdaUrl: string = 'https://j6aysvdvz3pgc7tqnfsbcw3nma0dgwgr.lambda-url.us-east-1.on.aws';
 
-  constructor(private http: HttpClient) {
-    this.s3Client = new S3Client({
-      region: environment.AWS_REGION,
-      credentials: {
-        accessKeyId: environment.AWS_ACCESS_KEY_ID,
-        secretAccessKey: environment.AWS_SECRET_ACCESS_KEY
-      }
-    });
-  }
+  constructor(private http: HttpClient) {}
 
-  uploadFileToS3(file: File, imageName: string): Observable<any> {
-    const sanitizedImageName = this.sanitizeFileName(imageName);
-    const command = new PutObjectCommand({
-      Bucket: this.s3Bucket,
-      Key: sanitizedImageName,
-      Body: file,
-      ContentType: file.type
+  invokeLambdaWithPrompt(prompt: string): Observable<LambdaResponse> {
+    const headers = new HttpHeaders({
+      'header1': prompt
     });
 
-    return from(this.s3Client.send(command)).pipe(
-      catchError((error: S3ServiceException) => {
-        console.error('Error uploading file:', error.message);
-        return throwError(error);
+    return this.http.post<any>(this.lambdaUrl, null, { headers }).pipe(
+      map(response => {
+        // Log the raw response for debugging
+        console.log('Raw response:', response);
+
+        // Handle the response structure properly
+        let parsedResponse;
+        try {
+          parsedResponse = typeof response === 'string' 
+            ? JSON.parse(response) 
+            : response;
+
+          // If response has a body property, use that
+          if (parsedResponse.body) {
+            parsedResponse = typeof parsedResponse.body === 'string'
+              ? JSON.parse(parsedResponse.body)
+              : parsedResponse.body;
+          }
+        } catch (e) {
+          console.error('Error parsing response:', e);
+          throw new Error('Invalid response format');
+        }
+
+        // Create response object with safe fallbacks
+        return {
+          prompt: prompt, // Use the original prompt
+          response: this.formatResponse(parsedResponse?.response || parsedResponse?.sentiment_analysis || ''),
+          requestId: parsedResponse?.requestId || undefined,
+          tokenCount: parsedResponse?.tokenCount || undefined
+        };
+      }),
+      catchError((error: any) => {
+        console.error('Error invoking Lambda function:', error);
+        return throwError(() => error);
       })
     );
   }
 
-  async uploadFileWithDelay(inputText: string, file: File): Promise<any> {
-    const sanitizedImageName = this.sanitizeFileName(file.name);
-    
-    // Upload file to S3
-    await this.uploadFileToS3(file, sanitizedImageName).toPromise();
-    
-    // Add 2-second delay
-    await new Promise(resolve => setTimeout(resolve, 2000));
-
-    // Proceed with invoking the Lambda function
-    return this.invokeLambdaWithPrompt(inputText);
-  }
-
-  async invokeLambdaWithPrompt(prompt: string): Promise<any> {
-    try {
-      const headers = new HttpHeaders({
-        'header1': prompt
-      });
-      return this.http.post(this.lambdaUrl, null, { headers }).pipe(
-        catchError((error: any) => {
-          console.error('Error invoking Lambda function:', error.message);
-          return throwError(error);
-        })
-      ).toPromise();
-    } catch (error: any) {
-      console.error('Detailed error:', error);
-      throw new Error(`Failed to process request: ${error.message}`);
-    }
-  }
-
-  private sanitizeFileName(fileName: string): string {
-    return fileName.replace(/[^a-zA-Z0-9._-]/g, '');
+  private formatResponse(response: string): string {
+    if (!response) return '';
+    return response.replace(/^\n+|\n+\$/g, '').trim();
   }
 }

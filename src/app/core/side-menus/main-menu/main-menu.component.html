@@ -1,0 +1,230 @@
+<!-- <div class="side-menu-branding">
+  <mat-icon class="brand-logo" svgIcon="angular-logo"></mat-icon>
+</div> -->
+<h1 class="brandname">Behavioral Science</h1>
+<h1 class="brandnameui">Intelligent Analysis</h1>
+<ul class="side-menu-navigation nav flex-column">
+  <li class="menu-item expandable-item nav-item" [routerLinkActive]="['active']">
+    <mat-expansion-panel [expanded]="false">
+      <mat-expansion-panel-header class="menu-link">
+        <div class="item-header-content">
+          <mat-panel-title>
+            <mat-icon class="menu-item-icon" svgIcon="utilities"></mat-icon>
+            <span class="menu-item-title"> Digital Library</span>
+          </mat-panel-title>
+          
+        </div>
+      </mat-expansion-panel-header> 
+      <ul class="menu-sub-navigation nav flex-column"> 
+        <li class="menu-item nav-item" [routerLinkActive]="['active']">
+          <a class="menu-link nav-link" [routerLinkActive]="['active']" [routerLink]="['/components/image-uploads']">
+            <i class="menu-item-icon"></i>
+            <span class="menu-item-title">Images</span>
+          </a>
+        </li>
+        <li class="menu-item nav-item" [routerLinkActive]="['active']">
+          <a class="menu-link nav-link" [routerLinkActive]="['active']" [routerLink]="['/components/vision-ai']">
+            <i class="menu-item-icon"></i>
+            <span class="menu-item-title">Audio</span>
+          </a>
+        </li>
+        <li class="menu-item nav-item" [routerLinkActive]="['active']">
+          <a class="menu-link nav-link" [routerLinkActive]="['active']" [routerLink]="['/dashboards/image-generator']">
+            <i class="menu-item-icon"></i>
+            <span class="menu-item-title">Videos</span>
+          </a>
+        </li>
+        <li class="menu-item nav-item" [routerLinkActive]="['active']">
+          <a class="menu-link nav-link" [routerLinkActive]="['active']" [routerLink]="['/components/generative-captions']">
+            <i class="menu-item-icon"></i>
+            <span class="menu-item-title">Documents</span>
+          </a>
+        </li>
+    
+   
+      </ul>
+    </mat-expansion-panel>
+  </li>  
+  
+  <li class="menu-item expandable-item nav-item" [routerLinkActive]="['active']">
+    <mat-expansion-panel [expanded]="false">
+      <mat-expansion-panel-header class="menu-link">
+        <div class="item-header-content">
+          <mat-panel-title>
+            <mat-icon class="menu-item-icon" svgIcon="forms"></mat-icon>
+            <span class="menu-item-title">RAG</span>
+          </mat-panel-title>
+        </div>
+      </mat-expansion-panel-header>
+      <ul class="menu-sub-navigation nav flex-column">
+        <li class="menu-item nav-item" [routerLinkActive]="['active']">
+          <a class="menu-link nav-link" [routerLinkActive]="['active']" [routerLink]="['/components/tech-state']">
+            <i class="menu-item-icon"></i>
+            <span class="menu-item-title">State of Tech</span>
+          </a>
+        </li>
+       
+      <li class="menu-item nav-item" [routerLinkActive]="['active']">
+     <a class="menu-link nav-link" [routerLinkActive]="['active']" [routerLink]="['/components/bedrock']">
+       <i class="menu-item-icon"></i>
+       <span class="menu-item-title">Bedrock API</span>
+     </a>
+   </li>
+
+
+  <li class="menu-item nav-item" [routerLinkActive]="['active']">
+    <a class="menu-link nav-link" [routerLinkActive]="['active']" [routerLink]="['/components/python-ai']">
+      <i class="menu-item-icon"></i>
+      <span class="menu-item-title">RAG - Python </span>
+    </a>
+  </li>
+      </ul>
+    </mat-expansion-panel>
+  </li>
+  <li class="menu-item expandable-item nav-item" [routerLinkActive]="['active']">
+    <mat-expansion-panel [expanded]="false">
+      <mat-expansion-panel-header class="menu-link">
+        <div class="item-header-content">
+          <mat-panel-title>
+            <mat-icon class="menu-item-icon" svgIcon="components"></mat-icon>
+            <span class="menu-item-title">Vision Tools</span>
+          </mat-panel-title>
+          
+        </div>
+      </mat-expansion-panel-header> 
+      <ul class="menu-sub-navigation nav flex-column"> 
+        <li class="menu-item nav-item" [routerLinkActive]="['active']">
+          <a class="menu-link nav-link" [routerLinkActive]="['active']" [routerLink]="['/charts/formPie']">
+            <i class="menu-item-icon"></i>
+            <span class="menu-item-title">Create Chart</span>
+          </a>
+        </li>
+     <li class="menu-item nav-item" [routerLinkActive]="['active']">
+          <a class="menu-link nav-link" [routerLinkActive]="['active']" [routerLink]="['/charts/bar-time']">
+            <i class="menu-item-icon"></i>
+            <span class="menu-item-title">Bar Chart Projections</span>
+          </a>
+        </li>
+        <li class="menu-item nav-item" [routerLinkActive]="['active']">
+          <a class="menu-link nav-link" [routerLinkActive]="['active']" [routerLink]="['/charts/line-time']">
+            <i class="menu-item-icon"></i>
+            <span class="menu-item-title">Line Chart Projections</span>
+          </a>
+        </li>
+       
+      </ul>
+    </mat-expansion-panel>
+  </li>  
+  <li class="menu-item expandable-item nav-item" [routerLinkActive]="['active']">
+    <mat-expansion-panel [expanded]="false">
+      <mat-expansion-panel-header class="menu-link">
+        <div class="item-header-content">
+          <mat-panel-title>
+            <mat-icon class="menu-item-icon" svgIcon="charts"></mat-icon>
+            <span class="menu-item-title">Chart Library</span>
+          </mat-panel-title>
+        </div>
+      </mat-expansion-panel-header>
+      <ul class="menu-sub-navigation nav flex-column">
+        <li class="menu-item nav-item" [routerLinkActive]="['active']">
+          <a class="menu-link nav-link" [routerLinkActive]="['active']" [routerLink]="['/charts/multistocks']">
+            <i class="menu-item-icon"></i>
+            <span class="menu-item-title"> Multi Select Charts</span>
+          </a>
+        </li>
+        <li class="menu-item nav-item" [routerLinkActive]="['active']">
+          <a class="menu-link nav-link" [routerLinkActive]="['active']" [routerLink]="['/charts/stockchart']">
+            <i class="menu-item-icon"></i>
+            <span class="menu-item-title">Dynamic Charts</span>
+          </a>
+        </li>
+        <li class="menu-item nav-item" [routerLinkActive]="['active']">
+          <a class="menu-link nav-link" [routerLinkActive]="['active']" [routerLink]="['/charts/echarts']">
+            <i class="menu-item-icon"></i>
+            <span class="menu-item-title">ECharts</span>
+          </a>
+        </li>
+        <li class="menu-item nav-item" [routerLinkActive]="['active']">
+          <a class="menu-link nav-link" [routerLinkActive]="['active']" [routerLink]="['/charts/chart-js']">
+            <i class="menu-item-icon"></i>
+            <span class="menu-item-title">Chart JS</span>
+          </a>
+        </li>
+        <li class="menu-item nav-item" [routerLinkActive]="['active']">
+          <a class="menu-link nav-link" [routerLinkActive]="['active']" [routerLink]="['/charts/d3']">
+            <i class="menu-item-icon"></i>
+            <span class="menu-item-title">D3 Charts</span>
+          </a>
+        </li>
+      </ul>
+    </mat-expansion-panel>
+  </li>
+
+
+ 
+  <li class="menu-item expandable-item nav-item" [routerLinkActive]="['active']">
+    <mat-expansion-panel [expanded]="false">
+      <mat-expansion-panel-header class="menu-link">
+        <div class="item-header-content">
+          <mat-panel-title>
+            <mat-icon class="menu-item-icon" svgIcon="tables"></mat-icon>
+            <span class="menu-item-title">Data Grids</span>
+          </mat-panel-title>
+        </div>
+      </mat-expansion-panel-header>
+      <ul class="menu-sub-navigation nav flex-column">
+        <li class="menu-item nav-item" [routerLinkActive]="['active']">
+          <a class="menu-link nav-link" [routerLinkActive]="['active']" [routerLink]="['/tables/top-models']">
+            <i class="menu-item-icon"></i>
+            <span class="menu-item-title">Top AI Models</span>
+          </a>
+        </li> 
+        <li class="menu-item nav-item" [routerLinkActive]="['active']">
+          <a class="menu-link nav-link" [routerLinkActive]="['active']" [routerLink]="['/charts/stock-drag']">
+            <i class="menu-item-icon"></i>
+            <span class="menu-item-title">Drag & Drop</span>
+          </a>
+        </li>
+        <li class="menu-item nav-item" [routerLinkActive]="['active']">
+          <a class="menu-link nav-link" [routerLinkActive]="['active']" [routerLink]="['/tables/spotify-data']">
+            <i class="menu-item-icon"></i>
+            <span class="menu-item-title">Spotify Songs</span>
+          </a>
+        </li>
+      </ul>
+    </mat-expansion-panel>
+  </li>
+  <li class="menu-item expandable-item nav-item" [routerLinkActive]="['active']">
+    <mat-expansion-panel [expanded]="false">
+      <mat-expansion-panel-header class="menu-link">
+        <div class="item-header-content">
+          <mat-panel-title>
+            <mat-icon class="menu-item-icon" svgIcon="dashboards"></mat-icon>
+            <span class="menu-item-title">Behavior Boards</span>
+          </mat-panel-title>
+        </div>
+      </mat-expansion-panel-header>
+      <ul class="menu-sub-navigation nav flex-column">
+        <li class="menu-item nav-item" [routerLinkActive]="['active']">
+          <a class="menu-link nav-link" [routerLinkActive]="['active']" [routerLink]="['/dashboards/behavior-upload']">
+            <i class="menu-item-icon"></i>
+            <span class="menu-item-title">Behavior</span>
+          </a>
+        </li>
+        <li class="menu-item nav-item" [routerLinkActive]="['active']">
+          <a class="menu-link nav-link" [routerLinkActive]="['active']" [routerLink]="['/dashboards/ecommerce']">
+            <i class="menu-item-icon"></i>
+            <span class="menu-item-title">Ecommerce</span>
+          </a>
+        </li>
+        <li class="menu-item nav-item" [routerLinkActive]="['active']">
+          <a class="menu-link nav-link" [routerLinkActive]="['active']" [routerLink]="['/dashboards/crm']">
+            <i class="menu-item-icon"></i>
+            <span class="menu-item-title">CRM</span>
+          </a>
+  
+     
+      </ul>
+    </mat-expansion-panel>
+  </li>
+</ul>

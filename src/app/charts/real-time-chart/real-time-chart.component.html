@@ -1,0 +1,44 @@
+
+
+<div class="container-fluid content-wrapper">
+    <h1 class="page-title">Rapid Rendering with Population Projections</h1>
+  
+    <div class="callout-message-wrapper">
+      
+      <div class="callout-message">
+        <span> 
+          <b>Every 3 seconds passed represents one year of elapsed time</b> 
+         Leverage all real-time data sources with real-time visualizations
+  
+        </span>
+      </div>
+    </div>
+  
+  
+    <div class="row">
+      <div class="col-12 chart-card">
+        <div>
+          <div class="chart-card-header">
+      
+          </div>
+          <div class="chart-card-body bar-vertical">
+            <ngx-charts-bar-vertical
+            [view]="view"
+            [scheme]="colorScheme"
+            [results]="data"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="showLegend"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel"
+            (select)="onSelect($event)">
+          </ngx-charts-bar-vertical>
+          
+          </div>
+        </div>
+      </div>
+      </div>
+</div>

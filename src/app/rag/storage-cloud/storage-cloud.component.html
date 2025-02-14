@@ -1,0 +1,35 @@
+
+<!-- storage-cloud.component.html -->
+<div class="upload-container">
+  <div class="upload-box">
+    <input 
+      type="file"
+      (change)="onFileSelected($event)"
+      [disabled]="isUploading"
+      accept=".jpg,.jpeg,.png,.gif,.pdf"
+      class="file-input"
+    >
+
+    <!-- Loading State -->
+    <div *ngIf="isUploading" class="loading-state">
+      <div class="spinner"></div>
+      <p>Uploading...</p>
+    </div>
+
+    <!-- Success Message -->
+    <div *ngIf="uploadSuccess" class="success-message">
+      Upload successful!
+    </div>
+
+    <!-- Error Message -->
+    <div *ngIf="uploadError" class="error-message">
+      {{ uploadError }}
+    </div>
+
+    <!-- Progress Bar -->
+    <div *ngIf="isUploading" class="progress-bar">
+      <div class="progress" [style.width.%]="uploadProgress"></div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,49 @@
+
+
+<div class="container-fluid content-wrapper">
+    <h1 class="page-title">Population Growth Projections </h1>
+  
+    <div class="callout-message-wrapper">
+      <div class="callout-icon d-none d-md-block">
+        <i class="fas fa-info-circle"></i>
+      </div>
+      <div class="callout-message">
+        <span>
+          <b>Line Chart</b>- Each second represents 1 day elapsed in time
+          giving you 
+          an idea of where we are headed.
+         Leverage all your real-time data sources with real-time visualizations.
+        </span>
+      </div>
+    </div>
+  
+  
+    <div class="row">
+      
+      
+      <div class="col-12 chart-card">
+        <div>
+          <div class="chart-card-header">
+            <span>Population growth projections by the day</span>
+          </div>
+          <div class="chart-card-body line-chart">
+            <ngx-charts-line-chart
+            [view]="view"
+            [scheme]="colorScheme"
+            [results]="data"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="showLegend"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel"
+            (select)="onSelect($event)">
+          </ngx-charts-line-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Update Chart Data</h1>
+<div mat-dialog-content>
+  <form [formGroup]="chartForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Mobile</mat-label>
+      <input matInput formControlName="Mobile" type="number">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Desktop</mat-label>
+      <input matInput formControlName="Desktop" type="number">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Tablet</mat-label>
+      <input matInput formControlName="Tablet" type="number">
+    </mat-form-field>
+    <button mat-button type="submit">Save</button>
+  </form>
+</div>

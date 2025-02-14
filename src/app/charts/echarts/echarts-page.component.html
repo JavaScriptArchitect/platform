@@ -1,0 +1,89 @@
+<div class="container-fluid content-wrapper">
+  <h1 class="page-title">ECharts - Rapid Construction of Web-based Visualizations</h1>
+
+  <div class="callout-message-wrapper">
+    <div class="callout-icon d-none d-md-block">
+      <i class="fas fa-info-circle"></i>
+    </div>
+    <div class="callout-message">
+      <span>
+        <b>Elite Reusable Component Repository </b> 
+        - built with industry leading open-source libraries 
+        such as Apache ECharts & is engineered to render new UI views when data changes in any of your resources
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6 col-sm-12">
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <span>Page Views</span>
+        </div>
+        <div class="chart-card-body">
+          <div *ngIf="isBrowser" echarts [options]="multipleLineChartOption" [theme]="customEChartsTheme"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-sm-12">
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <span>Transactions Completed - By Country</span>
+        </div>
+        <div class="chart-card-body">
+          <div *ngIf="isBrowser" echarts [options]="pieChartOption" [theme]="customEChartsTheme"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-sm-12">
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <span>Monthly Transactions</span>
+        </div>
+        <div class="chart-card-body">
+          <div *ngIf="isBrowser" echarts [options]="barChartOption" [theme]="customEChartsTheme"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-sm-12">
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <span>Sales</span>
+        </div>
+        <div class="chart-card-body">
+          <div *ngIf="isBrowser" echarts [options]="smoothLineOption" [theme]="customEChartsTheme"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-sm-12">
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <span>Project Distribution</span>
+        </div>
+        <div class="chart-card-body">
+          <div *ngIf="isBrowser" echarts [options]="multiplePieChartOption" [theme]="customEChartsTheme"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-sm-12">
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <span>Devices</span>
+        </div>
+        <div class="chart-card-body">
+          <div *ngIf="isBrowser" echarts [options]="doughnutChartOption" [theme]="customEChartsTheme"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <span>Referral Source</span>
+        </div>
+        <div class="chart-card-body">
+          <div *ngIf="isBrowser" echarts [options]="areaStackChartOption" [theme]="customEChartsTheme"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

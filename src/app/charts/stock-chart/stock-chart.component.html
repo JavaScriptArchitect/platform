@@ -1,0 +1,68 @@
+<div class="container-fluid content-wrapper">
+  <h1 class="page-title">D3 Chart Dynamically Renders Changes in Closing Stock Prices</h1>
+
+  <div class="callout-message-wrapper">
+    <div class="callout-icon d-none d-md-block">
+      <i class="fas fa-info-circle"></i>
+    </div>
+    <div class="callout-message">
+      <span>
+        <b>Select any previous date to get the closing stock price for Amazon, Meta, Apple, Google
+          and Microsoft. All component visualizations are built to dynamically render with real-time data changes & 
+          new service requests that return changes in data.
+        </b> 
+    
+      </span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="form-group">
+          <label class="col-form-label">Select Date</label>
+          <div class="input-group">
+            <input class="form-control" name="datepicker" [(ngModel)]="selectedDate" ngbDatepicker #datepicker="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn datepicker-toggle-btn" (click)="datepicker.toggle()" type="button"><i class="fas fa-calendar-alt"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <button class="btn btn-primary" (click)="fetchStockData()">Get Closing Prices</button>
+      </div>
+    </div>
+    
+    <div *ngIf="isLoading" class="loading-spinner">
+      Loading...
+    </div>
+
+    <div class="row">
+      <div class="col-12 chart-card">
+        <div>
+          <div class="chart-card-header">
+            <span>Closing Stock Price- Dynamic By Date</span>
+          </div>
+          <div class="chart-card-body bar-vertical">
+            <ngx-charts-bar-vertical *ngIf="isBrowser"
+              [scheme]="colorScheme"
+              [results]="companyData"
+              [gradient]="verticalBarOptions.gradient"
+              [xAxis]="verticalBarOptions.showXAxis"
+              [yAxis]="verticalBarOptions.showYAxis"
+              [legend]="verticalBarOptions.showLegend"
+              [showXAxisLabel]="verticalBarOptions.showXAxisLabel"
+              [showYAxisLabel]="verticalBarOptions.showYAxisLabel"
+              [xAxisLabel]="verticalBarOptions.xAxisLabel"
+              [yAxisLabel]="verticalBarOptions.yAxisLabel"
+              [barPadding]="verticalBarOptions.barPadding"
+              [showGridLines]="verticalBarOptions.showGridLines">
+            </ngx-charts-bar-vertical>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

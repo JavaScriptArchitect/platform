@@ -9,6 +9,20 @@ h3.sentiment {
   font-size: 2rem;
 }
 
+.bg{
+  height: 24vw;
+  width: 100%;
+  // background-color: rgb(210 146 255 / 0.5);
+
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 h1.title {
   font-family: poppins, sans-serif;
   font-weight: 200;
@@ -3171,3 +3185,8 @@ margin-right: 5px !important;
     font-weight: 800;
     text-decoration: none;
   }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

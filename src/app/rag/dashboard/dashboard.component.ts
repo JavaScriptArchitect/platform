@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { DatingService } from '../services/dating.service';
+import { DatingService } from '@app/services/dating.service';
 
 @Component({
   selector: 'app-dashboard',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })

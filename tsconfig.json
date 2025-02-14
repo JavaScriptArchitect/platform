@@ -1,8 +1,8 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,  // Add this
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -13,26 +13,60 @@
     "sourceMap": true,
     "declaration": false,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",  // Update this for Angular 17
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-  
     "lib": [
       "ES2022",
-      "dom"
+      "dom",
+      "dom.iterable"  // Add this for better DOM support
     ],
     "resolveJsonModule": true,
-    "allowJs": true // Added allowJs option
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,  // Add this for AWS Amplify
+    "baseUrl": "./",  // Add this for path aliases
+    "paths": {  // Add path aliases
+      "@app/*": ["src/app/*"],
+      "@env/*": ["src/environments/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@core/*": ["src/app/core/*"]
+    },
+    "types": [  // Add necessary types
+      "node",
+      "jasmine"
+    ],
+    "plugins": [  // Add Angular language service
+      {
+        "name": "@angular/language-service"
+      }
+    ]
   },
   "angularCompilerOptions": {
+    "enableIvy": true,
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictTemplates": true,
+    "strictPropertyInitialization": true,  
+    "strictNullChecks": true,  
+    "enableResourceInlining": true
   },
   "include": [
-    "src"
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.json"
+  ],
+  "exclude": [  // Add exclusions
+    "node_modules",
+    "src/**/*.spec.ts",
+    "src/environments/*.ts",
+    "src/**/*.test.ts"
+  ],
+  "files": [  // Add specific files if needed
+    "src/main.ts",
+    "src/polyfills.ts"
   ]
 }

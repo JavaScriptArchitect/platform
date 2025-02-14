@@ -1,0 +1,90 @@
+<div class="main">
+    <nav>
+        <img height="45px;" src="../../../assets/red-cloud-ai.svg" alt="Cloud AI Partners">
+        <div>
+            <button class="btn lang">Lorem</button>
+            <button class="btn btn-red-sm">Lorem ipsum</button>
+        </div>
+    </nav>
+    <div class="box"></div>
+    <div class="content">
+        <span>In condimentum facilisis porta. Sed nec diam eu diam mattis viverra.</span>
+        <div class="content-buttons">
+            <input type="text" id="inputText" [(ngModel)]="inputText" placeholder="Enter your prompt">
+            <button (click)="onSubmit()" class="btn btn-red">Submit</button>
+            <input type="file" id="fileUpload" (change)="onFileSelected($event)" />
+        </div>
+        <div *ngIf="loading" class="loading-indicator">Loading...</div>
+        <div *ngIf="error" class="error-message">{{ error }}</div>
+    </div>
+    <div class="separation"></div>
+</div>
+
+<div class="result-container" *ngIf="result">
+  <div class="result-item" *ngIf="result.rawImage">
+    <h3 class="sentiment">Uploaded File</h3>
+    <img [src]="fileData" alt="Uploaded Image" class="result-file" />
+  </div>
+  <div class="result-item">
+    <h3 class="sentiment">OCR Result</h3>
+    <p class="result">{{ result.ocrText }}</p>
+  </div>
+  <div class="result-item">
+    <h3 class="sentiment">Sentiment Analysis</h3>
+    <p class="result">{{ result.sentimentAnalysis }}</p>
+  </div>
+  <!-- <div class="result-item">
+    <h3>Insights & Suggestions</h3>
+    <p>{{ result.insights_and_suggestions }}</p>
+  </div> -->
+</div>
+
+<section class="first">
+    <div class="text">
+        <span>Lorem ipsum dolor sit amet</span>
+        <div>Consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</div>
+    </div>
+    <div class="secimg">
+        <img src="" alt="">
+        <video src="" autoplay loop muted></video>
+    </div>
+</section>
+
+<div class="separation"></div>
+
+<section class="first second">
+    <div class="secimg2">
+        <img src="" alt="">
+    </div>
+    <div class="text">
+        <span>Download to watch offline</span>
+        <div>.</div>
+    </div>
+</section>
+
+<div class="separation"></div>
+
+<section class="first third">
+    <div class="text">
+        <span></span>
+        <div>.</div>
+    </div>
+    <div class="secimg3">
+        <img src="" alt="">
+        <video src="" autoplay loop muted></video>
+    </div>
+</section>
+
+<div class="separation"></div>
+
+<section class="first fourth">
+    <div class="secimg4">
+        <img src="" alt="">
+    </div>
+    <div class="text">
+        <span>Create profiles </span>
+        <span>.</span>
+    </div>
+</section>
+
+<div class="separation"></div>

@@ -4,7 +4,7 @@ import { OcrSentimentService } from '../../services/ocrlambda.service';
 @Component({
   selector: 'app-sentiment',
   templateUrl: './sentiment.component.html',
-  styleUrls: ['./sentiment.component.css']
+  styleUrls: ['./sentiment.component.scss']
 })
 export class SentimentComponent {
   inputText: string = '';

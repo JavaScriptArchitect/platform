@@ -1,0 +1,34 @@
+<div class="form-container">
+    <h3 class="chartformheader">User-Defined, Pie Chart</h3>
+    <p class="chartformsub">Enter any 3 labels and their corresponding values to view a quickly configured user chart, not 
+        on an expensive BI platform, but in your applications. Advanced solutions allow users to upload pdfs, images, CSV/XSLX files, 
+        text, and json which are extracted, transcribed, and displayed by AI Tools upon upload in a summary view. Users can 
+        drag and drop desired labels and corresponding values from the summary view into a wide range of visualizations. 
+        Pick one or all of these options and we can develop a solution for you with parameters and models for your use cases. 
+    </p>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="label1">Label 1:</label>
+        <input id="label1" formControlName="label1" type="text" class="form-control" placeholder="Enter first label"/>
+        <label for="value1">Value 1:</label>
+        <input id="value1" formControlName="value1" type="number" class="form-control" placeholder="Enter first value"/>
+      </div>
+  
+      <div class="form-group">
+        <label for="label2">Label 2:</label>
+        <input id="label2" formControlName="label2" type="text" class="form-control" placeholder="Enter second label"/>
+        <label for="value2">Value 2:</label>
+        <input id="value2" formControlName="value2" type="number" class="form-control" placeholder="Enter second value"/>
+      </div>
+  
+      <div class="form-group">
+        <label for="label3">Label 3:</label>
+        <input id="label3" formControlName="label3" type="text" class="form-control" placeholder="Enter third label"/>
+        <label for="value3">Value 3:</label>
+        <input id="value3" formControlName="value3" type="number" class="form-control" placeholder="Enter third value"/>
+      </div>
+  
+      <button type="submit" class="btn-submit" [disabled]="form.invalid">Submit</button>
+    </form>
+  </div>
+  

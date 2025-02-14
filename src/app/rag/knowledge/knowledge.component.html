@@ -1,0 +1,133 @@
+<!-- <div class="main">
+    <nav>
+        <img height="45px;" src="../../../assets/red-cloud-ai.svg" alt="Cloud AI Partners">
+        <div>
+            <button class="btn lang">Lorem</button>
+            <button class="btn btn-red-sm">Lorem ipsum</button>
+        </div>
+    </nav>
+    <div class="box"></div>
+  
+    
+   
+    <div class="content">
+        <span>In condimentum facilisis porta. Sed nec diam eu diam mattis viverra.</span>
+        <div class="content-buttons">
+            <input type="text" id="inputText" [(ngModel)]="inputText" placeholder="Enter your prompt">
+            <button (click)="onSubmit()" class="btn btn-red">Submit</button>
+        </div>
+        <div *ngIf="loading" class="loading-indicator">Loading...</div>
+        <div *ngIf="error" class="error-message">{{ error }}</div>
+    </div>
+    <div class="separation"></div>
+</div>
+
+<div class="result-container" *ngIf="result">
+
+
+  <div class="result-item">
+    <h3 class="sentiment">Here you go ! </h3>
+    <p class="result">{{ result.sentiment_analysis }}</p>
+  </div> -->
+
+  <!-- <div class="result-item">
+    <h3>Insights & Suggestions</h3>
+    <p>{{ result.insights_and_suggestions }}</p>
+  </div> -->
+<!-- </div> -->
+<div class="main">
+    <nav>
+        <img height="45px;" src="../../../assets/red-cloud-ai.svg" alt="Cloud AI Partners">
+        <div>
+            <button class="btn lang">Lorem</button>
+            <button class="btn btn-red-sm">Lorem ipsum</button>
+        </div>
+    </nav>
+    <div class="box"></div>
+   
+    <div class="content">
+        <span>In condimentum facilisis porta. Sed nec diam eu diam mattis viverra.</span>
+        <div class="content-buttons">
+            <input 
+                type="text" 
+                id="inputText" 
+                [(ngModel)]="inputText" 
+                placeholder="Enter your prompt"
+                [disabled]="loading">
+            <button 
+                (click)="onSubmit()" 
+                class="btn btn-red"
+                [disabled]="!inputText.trim() || loading">
+                {{ loading ? 'Processing...' : 'Submit' }}
+            </button>
+        </div>
+        <div *ngIf="loading" class="loading-indicator">Loading...</div>
+        <div *ngIf="error" class="error-message">{{ error }}</div>
+    </div>
+    <div class="separation"></div>
+</div>
+
+<div class="result-container" *ngIf="result">
+    <div class="result-item">
+        <h3 class="sentiment">Here you go!</h3>
+        <div class="result-content">
+            <ng-container *ngFor="let paragraph of getParagraphs(result.response)">
+                <p class="result">{{ paragraph }}</p>
+            </ng-container>
+        </div>
+        <div class="metadata" *ngIf="result.requestId">
+            <small>Request ID: {{ result.requestId }}</small>
+            <small *ngIf="result.tokenCount">Token Count: {{ result.tokenCount }}</small>
+        </div>
+    </div>
+</div>
+
+<!-- <section class="first">
+    <div class="text">
+        <span>Lorem ipsum dolor sit amet</span>
+        <div>Consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</div>
+    </div>
+    <div class="secimg">
+        <img src="/ASSETS/IMAGES/TV_NETFLIX.png" alt="">
+        <video src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v" autoplay loop muted></video>
+    </div>
+</section>
+
+<div class="separation"></div>
+
+<section class="first second">
+    <div class="secimg2">
+        <img src="/ASSETS/IMAGES/MOBILE_NETFLIX.jpg" alt="">
+    </div>
+    <div class="text">
+        <span>Download your shows to watch offline</span>
+        <div>Save your favourites easily and always have something to watch.</div>
+    </div>
+</section>
+
+<div class="separation"></div>
+
+<section class="first third">
+    <div class="text">
+        <span>Prompt</span>
+        <div>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</div>
+    </div>
+    <div class="secimg3">
+        <img src="/ASSETS/IMAGES/DEKSTOP_NETFLIX.png" alt="">
+        <video src="/ASSETS/VIDEOS/VIDEO_NETFLIX.m4v" autoplay loop muted></video>
+    </div>
+</section>
+
+<div class="separation"></div>
+
+<section class="first fourth">
+    <div class="secimg4">
+        <img src="/ASSETS/IMAGES/CHILD_NETFLIX.png" alt="">
+    </div>
+    <div class="text">
+        <span>prompt</span>
+        <span>Send children on adventures with their favourite characters in a space made just for them—free with your membership.</span>
+    </div>
+</section>
+
+<div class="separation"></div> -->

@@ -1,0 +1,18 @@
+<div class="container-fluid content-wrapper">
+    <h1 class="page-title">The Dynamic Doughnut</h1>
+
+  <div class="col-lg-6 col-sm-12">
+    <div class="chart-card">
+      <div class="chart-card-header">
+        <button class="button-info" (click)="openDialog()">Update Doughnut Data</button>
+      </div>
+      <div class="chart-card-body">
+        <canvas baseChart
+        [data]="doughnutChartData"
+        [options]="doughnutChartOptions"
+        [type]="doughnutChartType">
+      </canvas>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="container-fluid content-wrapper">
+    <h1 class="page-title">Dynamic Rendering - Top Technology Companies - Low, High, & Closing Stock Prices by Date </h1>
+  
+    <div class="callout-message-wrapper">
+      <div class="callout-icon d-none d-md-block">
+        <i class="fas fa-info-circle"></i>
+      </div>
+      <div class="callout-message">
+        <span>
+            <b>Horizontal Bar Chart, Accurate Market Data </b> -
+          Hold down SHIFT to select desired symbols from the top technology companies, you must Multiple select (4) stock symbols, a previous market date, 
+          and use the submit button to process your request.
+        </span>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="symbolSelection">Select Stock Symbols (4):</label>
+          <select id="symbolSelection" class="form-control" multiple [(ngModel)]="selectedSymbols">
+            <option *ngFor="let symbol of symbols" [value]="symbol">{{ symbol }}</option>
+          </select>
+        </div>
+      </div>
+  
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Select Date:</label>
+          <input class="form-control" name="datepicker" [(ngModel)]="selectedDate" ngbDatepicker #datepicker="ngbDatepicker">
+          <button class="btn datepicker-toggle-btn" (click)="datepicker.toggle()" type="button"><i class="fas fa-calendar-alt"></i></button>
+        </div>
+      </div>
+  
+      <div class="col-md-4">
+        <button class="btn btn-primary mt-4" [disabled]="selectedSymbols.length !== 4" (click)="fetchStockDetails()">Submit</button>
+      </div>
+    </div>
+  
+    <div *ngIf="isLoading" class="loading-spinner">
+      <div class="text-center">
+        <span class="loader-text">Loading...</span>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-12 chart-card">
+        <div>
+          <div class="chart-card-header">
+            <span>Stock Details</span>
+          </div>
+          <div class="chart-card-body bar-horizontal">
+            <ngx-charts-bar-horizontal-2d *ngIf="isBrowser"
+              [scheme]="colorScheme"
+              [results]="stockDetails"
+              [legendPosition]="horizontalBarOptions.legendPosition"
+              [xAxis]="horizontalBarOptions.showXAxis"
+              [yAxis]="horizontalBarOptions.showYAxis"
+              [legend]="horizontalBarOptions.showLegend"
+              [showXAxisLabel]="horizontalBarOptions.showXAxisLabel"
+              [showYAxisLabel]="horizontalBarOptions.showYAxisLabel"
+              [xAxisLabel]="horizontalBarOptions.xAxisLabel"
+              [barPadding]="horizontalBarOptions.barPadding"
+              [groupPadding]="horizontalBarOptions.groupPadding"
+              [showGridLines]="horizontalBarOptions.showGridLines">
+            </ngx-charts-bar-horizontal-2d>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

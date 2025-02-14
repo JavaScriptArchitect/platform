@@ -5,6 +5,7 @@ import { Observable, from, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -55,7 +56,6 @@ export class OcrSentimentService {
 
   async processFileWithLambda(inputText: string, fileKey: string): Promise<any> {
     try {
-      const s3Uri = `s3://${this.s3Bucket}/${fileKey}`;
       const headers = new HttpHeaders({
         'header1': inputText,
         'header2': this.s3Bucket,

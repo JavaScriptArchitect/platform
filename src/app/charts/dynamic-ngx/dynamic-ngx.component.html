@@ -1,0 +1,40 @@
+<div class="container-fluid content-wrapper">
+    <h1 class="page-title">Change Values to Re-Render Chart in Real-Time </h1>
+<div class="callout-message-wrapper">
+   
+    <form [formGroup]="form">
+        <div *ngFor="let country of countriesData">
+            
+          <label>
+            {{country.name}}  &nbsp; &nbsp;
+            <input type="number" [formControlName]="country.name">
+          </label>
+         
+        </div>
+      </form>
+  </div>
+
+
+  
+  
+  <div class="col-12 chart-card">
+    <div>
+      <div class="chart-card-header">
+        <span>Sales by Country - This year</span>
+      </div>
+      <div class="chart-card-body bar-vertical">
+        <ngx-charts-bar-vertical
+        [results]="countriesData"
+        [xAxis]="true"
+        [yAxis]="true"
+        [showLegend]="true"
+        [showXAxisLabel]="true"
+        [xAxisLabel]="'Country'"
+        [showYAxisLabel]="true"
+        [yAxisLabel]="'Sales'"
+        [colorScheme]="colorScheme"
+      ></ngx-charts-bar-vertical>
+      </div>
+    </div>
+  </div>
+</div>

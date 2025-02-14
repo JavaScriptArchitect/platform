@@ -1,0 +1,35 @@
+<div class="stock-drag-drop" style="width: 90%; margin: 0 auto; padding: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px; background-color: #f9f9f9;">
+  <h3 style="color: #035388;">Customize Your Stock Selections</h3>
+  <p style="color: #035388;">Select and drag the symbols into the box to make your selections. Choose up to 4 symbols.</p>
+  <div class="available-symbols" (drop)="drop($event)" (dragover)="allowDrop($event)" style="display: flex; flex-wrap: wrap; gap: 15px; padding: 20px; border: 2px dashed #035388; border-radius: 8px; min-height: 150px;">
+    <h4 style="width: 100%; color: #035388;">Available Symbols</h4>
+    <div *ngFor="let symbol of availableSymbols" draggable="true" (dragstart)="drag($event, symbol)" style="padding: 10px 15px; background-color: #40c3f7; color: white; border-radius: 4px; cursor: grab;">
+      {{ symbol }}
+    </div>
+  </div>
+  <div class="selected-symbols" style="margin-top: 20px;">
+    <h4 style="color: #035388;">Selected Symbols (4)</h4>
+    <div *ngFor="let symbol of selectedSymbols" style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+      <span style="padding: 10px 15px; background-color: #8A2BE2; color: white; border-radius: 4px;">{{ symbol }}</span>
+      <button (click)="removeSymbol(symbol)" style="background-color: #8A2BE2; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer;">Remove</button>
+    </div>
+  </div>
+
+  <div *ngIf="isLoading" style="margin-top: 20px; color: #035388;">Loading...</div>
+  <div *ngIf="stockDetails.length > 0" style="margin-top: 20px;">
+    <div *ngFor="let stock of stockDetails" style="margin-bottom: 20px; animation: fadeIn 1s;">
+      <h5 style="color: #035388;">{{ stock.name }}</h5>
+      <div class="bar-container">
+        <div *ngFor="let series of stock.series" style="display: inline-block; width: 30%; margin-right: 1%; background-color: #E6E6FA; height: 30px; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #4B0082; animation: growWidth 1s;">
+          {{ series.name }}: {{ series.value }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="date-range" style="margin-top: 20px;">
+    <h4 style="color: #035388;">Select a Date</h4>
+    <input type="date" [(ngModel)]="dateFrom" placeholder="Select a Date" style="padding: 10px; border: 1px solid #035388; border-radius: 4px;" (change)="validateDate($event)">
+  </div>
+  <button (click)="fetchStockDetails()" [disabled]="selectedSymbols.length !== 4 || !dateFrom" style="margin-top: 20px; padding: 12px 25px; background-color: #8A2BE2; color: white; border: none; border-radius: 4px; cursor: pointer;">Fetch Stock Details</button>
+</div>

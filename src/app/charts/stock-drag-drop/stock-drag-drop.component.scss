@@ -1,0 +1,143 @@
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes growWidth {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  .stock-drag-drop {
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .stock-drag-drop h3 {
+    color: #035388;
+  }
+  
+  .stock-drag-drop p {
+    color: #035388;
+  }
+  
+  .stock-drag-drop .available-symbols {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+    border: 2px dashed #035388;
+    border-radius: 8px;
+    min-height: 150px;
+  }
+  
+  .stock-drag-drop .available-symbols h4 {
+    width: 100%;
+    color: #035388;
+  }
+  
+  .stock-drag-drop .available-symbols div {
+    padding: 10px 15px;
+    background-color: #40c3f7;
+    color: white;
+    border-radius: 4px;
+    cursor: grab;
+  }
+  
+  .stock-drag-drop .selected-symbols {
+    margin-top: 20px;
+  }
+  
+  .stock-drag-drop .selected-symbols h4 {
+    color: #035388;
+  }
+  
+  .stock-drag-drop .selected-symbols div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .stock-drag-drop .selected-symbols span {
+    padding: 10px 15px;
+    background-color: #8A2BE2;
+    color: white;
+    border-radius: 4px;
+  }
+  
+  .stock-drag-drop .selected-symbols button {
+    background-color: #8A2BE2;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .stock-drag-drop .date-range {
+    margin-top: 20px;
+  }
+  
+  .stock-drag-drop .date-range h4 {
+    color: #035388;
+  }
+  
+  .stock-drag-drop .date-range input {
+    padding: 10px;
+    border: 1px solid #035388;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .stock-drag-drop button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #8A2BE2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .stock-drag-drop .loading {
+    margin-top: 20px;
+    color: #035388;
+  }
+  
+  .stock-drag-drop .stock-details {
+    margin-top: 20px;
+  }
+  
+  .stock-drag-drop .stock-details div {
+    margin-bottom: 20px;
+    animation: fadeIn 1s;
+  }
+  
+  .stock-drag-drop .stock-details h5 {
+    color: #035388;
+  }
+  
+  .stock-drag-drop .bar-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+  }
+  
+  .stock-drag-drop .bar-container div {
+    width: 30%;
+    margin-right: 5%;
+    background-color: #E6E6FA;
+    height: 30px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4B0082;
+    animation: growWidth 1s;
+  }
+  
