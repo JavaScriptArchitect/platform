@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "amplify-angular-template": {
+    "cloud-ai-partners": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -32,7 +32,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/amplify-angular-template",
+            "outputPath": "dist/cloud-ai-partners",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -106,14 +106,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "buildTarget": "amplify-angular-template:build"
+            "buildTarget": "cloud-ai-partners:build"
           },
           "configurations": {
             "production": {
-              "buildTarget": "amplify-angular-template:build:production"
+              "buildTarget": "cloud-ai-partners:build:production"
             },
             "development": {
-              "buildTarget": "amplify-angular-template:build:development"
+              "buildTarget": "cloud-ai-partners:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -121,7 +121,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "amplify-angular-template:build"
+            "buildTarget": "cloud-ai-partners:build"
           }
         },
         "test": {
@@ -227,21 +227,21 @@
         "serve-ssr": {
           "builder": "@nguniversal/builders:ssr-dev-server",
           "options": {
-            "browserTarget": "amplify-angular-template:build",
-            "serverTarget": "amplify-angular-template:server"
+            "browserTarget": "cloud-ai-partners:build",
+            "serverTarget": "cloud-ai-partners:server"
           },
           "configurations": {
             "production": {
-              "browserTarget": "amplify-angular-template:build:production",
-              "serverTarget": "amplify-angular-template:server:production"
+              "browserTarget": "cloud-ai-partners:build:production",
+              "serverTarget": "cloud-ai-partners:server:production"
             }
           }
         },
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
           "options": {
-            "browserTarget": "amplify-angular-template:build:production",
-            "serverTarget": "amplify-angular-template:server:production",
+            "browserTarget": "cloud-ai-partners:build:production",
+            "serverTarget": "cloud-ai-partners:server:production",
             "routes": [
               "/"
             ]

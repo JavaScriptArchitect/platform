@@ -1,3 +1,3 @@
-if (typeof ReadableStream === "undefined") {
-  globalThis.ReadableStream = require("web-streams-polyfill/ponyfill").ReadableStream;
-}
+// if (typeof ReadableStream === "undefined") {
+//   globalThis.ReadableStream = require("web-streams-polyfill/ponyfill").ReadableStream;
+// }

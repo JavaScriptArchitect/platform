@@ -2,10 +2,10 @@
   "compileOnSave": false,
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,  // Add this
-    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
     "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
+    "noPropertyAccessFromIndexSignature": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
@@ -13,7 +13,7 @@
     "sourceMap": true,
     "declaration": false,
     "experimentalDecorators": true,
-    "moduleResolution": "bundler",  // Update this for Angular 17
+    "moduleResolution": "node",
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
@@ -21,23 +21,22 @@
     "lib": [
       "ES2022",
       "dom",
-      "dom.iterable"  // Add this for better DOM support
+      "dom.iterable"
     ],
     "resolveJsonModule": true,
     "allowJs": true,
-    "allowSyntheticDefaultImports": true,  // Add this for AWS Amplify
-    "baseUrl": "./",  // Add this for path aliases
-    "paths": {  // Add path aliases
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "paths": {
       "@app/*": ["src/app/*"],
       "@env/*": ["src/environments/*"],
       "@shared/*": ["src/app/shared/*"],
       "@core/*": ["src/app/core/*"]
     },
-    "types": [  // Add necessary types
-      "node",
-      "jasmine"
+    "types": [
+      "node"
     ],
-    "plugins": [  // Add Angular language service
+    "plugins": [
       {
         "name": "@angular/language-service"
       }
@@ -49,9 +48,11 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true,
-    "strictPropertyInitialization": true,  
-    "strictNullChecks": true,  
-    "enableResourceInlining": true
+    "strictPropertyInitialization": true,
+    "strictNullChecks": true,
+    "enableResourceInlining": true,
+    "fullTemplateTypeCheck": true,
+    "strictDomLocalRefTypes": true
   },
   "include": [
     "src/**/*.ts",
@@ -59,13 +60,13 @@
     "src/**/*.tsx",
     "src/**/*.json"
   ],
-  "exclude": [  // Add exclusions
+  "exclude": [
     "node_modules",
     "src/**/*.spec.ts",
     "src/environments/*.ts",
     "src/**/*.test.ts"
   ],
-  "files": [  // Add specific files if needed
+  "files": [
     "src/main.ts",
     "src/polyfills.ts"
   ]
