@@ -19,7 +19,7 @@ export class BehaviorFilesComponent { // Ensure the class name matches your temp
   onFileSelected(event: any): void {
     this.file = event.target.files[0];
   }
-
+// this has to be moved to amplify 
   getS3Url(fileUrl: string): string {
     return `https://s3.amazonaws.com/${this.result.s3Bucket}/${fileUrl}`;
   }
