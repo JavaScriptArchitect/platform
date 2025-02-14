@@ -16,8 +16,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { OcrSentimentService } from './services/ocrlambda.service';
-import { BehaviorService } from './services/behavior.service';
+
+
 import { NavComponent } from './nav/nav.component';
 @NgModule({
   declarations: [
@@ -33,10 +33,7 @@ import { NavComponent } from './nav/nav.component';
     NgbModule,
     // ...import other modules...
   ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy },
-    DatingService,
-    BehaviorService,
-    OcrSentimentService],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
