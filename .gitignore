@@ -50,6 +50,14 @@ Thumbs.db
 amplify_outputs*
 amplifyconfiguration*
 
+
+# Environment specific files
+environment.ts
+environment.prod.ts
+environment.staging.ts
+environment.local.ts
+environment.*.ts
+
 #amplify-do-not-edit-begin
 amplify/\#current-cloud-backend
 amplify/.config/local-*
@@ -71,10 +79,3 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
-
-# Environment specific files
-environment.ts
-environment.prod.ts
-environment.staging.ts
-environment.local.ts
-environment.*.ts

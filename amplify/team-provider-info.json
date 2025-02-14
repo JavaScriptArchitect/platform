@@ -1,101 +1,19 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-behaviorinformatics-dev-27347-authRole",
-      "UnauthRoleArn": "arn:aws:iam::857375868088:role/amplify-behaviorinformatics-dev-27347-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::857375868088:role/amplify-behaviorinformatics-dev-27347-authRole",
-      "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-behaviorinformatics-dev-27347-deployment",
-      "UnauthRoleName": "amplify-behaviorinformatics-dev-27347-unauthRole",
-      "StackName": "amplify-behaviorinformatics-dev-27347",
-      "StackId": "arn:aws:cloudformation:us-east-2:857375868088:stack/amplify-behaviorinformatics-dev-27347/7f38bca0-dae7-11ef-8881-06d182b05025",
-      "AmplifyAppId": "d1fljon3nl9soj"
+      "AuthRoleName": "amplify-cloudaipartners-dev-4f4b4-authRole",
+      "UnauthRoleArn": "arn:aws:iam::857375868088:role/amplify-cloudaipartners-dev-4f4b4-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::857375868088:role/amplify-cloudaipartners-dev-4f4b4-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-cloudaipartners-dev-4f4b4-deployment",
+      "UnauthRoleName": "amplify-cloudaipartners-dev-4f4b4-unauthRole",
+      "StackName": "amplify-cloudaipartners-dev-4f4b4",
+      "StackId": "arn:aws:cloudformation:us-west-2:857375868088:stack/amplify-cloudaipartners-dev-4f4b4/9440e820-eafa-11ef-97de-0ae2e4a91c7f",
+      "AmplifyAppId": "dc6nu1yl406kl"
     },
     "categories": {
       "function": {
-        "behaviorinformatics6c78c3cf": {},
-        "behaviorsLambda": {}
-      }
-    }
-  },
-  "alphaai": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-behaviorinformatics-alphaai-0a242-authRole",
-      "UnauthRoleArn": "arn:aws:iam::857375868088:role/amplify-behaviorinformatics-alphaai-0a242-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::857375868088:role/amplify-behaviorinformatics-alphaai-0a242-authRole",
-      "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-behaviorinformatics-alphaai-0a242-deployment",
-      "UnauthRoleName": "amplify-behaviorinformatics-alphaai-0a242-unauthRole",
-      "StackName": "amplify-behaviorinformatics-alphaai-0a242",
-      "StackId": "arn:aws:cloudformation:us-east-2:857375868088:stack/amplify-behaviorinformatics-alphaai-0a242/4a028910-dae9-11ef-9555-0206dfb1d333",
-      "AmplifyAppId": "d1fljon3nl9soj"
-    },
-    "categories": {
-      "function": {
-        "behaviorsLambda": {
-          "deploymentBucketName": "amplify-behaviorinformatics-alphaai-0a242-deployment",
-          "s3Key": "amplify-builds/behaviorsLambda-6e585544415145476167-build.zip"
-        },
-        "lambdaAlpha": {
-          "deploymentBucketName": "amplify-behaviorinformatics-alphaai-0a242-deployment",
-          "s3Key": "amplify-builds/lambdaAlpha-4c4c7948656d517a3847-build.zip"
-        },
-        "S3Trigger8d51f8c6": {
-          "deploymentBucketName": "amplify-behaviorinformatics-alphaai-0a242-deployment",
-          "s3Key": "amplify-builds/S3Trigger8d51f8c6-5561764e67714a515067-build.zip"
-        },
-        "dynamocloudaiTrigger57cd2013": {
-          "deploymentBucketName": "amplify-behaviorinformatics-alphaai-0a242-deployment",
-          "s3Key": "amplify-builds/dynamocloudaiTrigger57cd2013-373943744d7474564368-build.zip"
-        }
-      },
-      "auth": {
-        "behaviorinformatics280f8562": {}
-      },
-      "storage": {
-        "cloudaiinformatics": {},
-        "dynamocloudai": {}
-      },
-      "interactions": {
-        "lexbehave": {
-          "deploymentBucketName": "amplify-behaviorinformatics-alphaai-0a242-deployment",
-          "s3Key": "amplify-builds/lexbehave-496c417976504e78476e-build.zip"
-        }
-      }
-    }
-  },
-  "alpha": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-behaviorinformatics-alpha-1b942-authRole",
-      "UnauthRoleArn": "arn:aws:iam::857375868088:role/amplify-behaviorinformatics-alpha-1b942-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::857375868088:role/amplify-behaviorinformatics-alpha-1b942-authRole",
-      "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-behaviorinformatics-alpha-1b942-deployment",
-      "UnauthRoleName": "amplify-behaviorinformatics-alpha-1b942-unauthRole",
-      "StackName": "amplify-behaviorinformatics-alpha-1b942",
-      "StackId": "arn:aws:cloudformation:us-east-2:857375868088:stack/amplify-behaviorinformatics-alpha-1b942/ffcbd7f0-db3a-11ef-8d59-0ae89b869e4d",
-      "AmplifyAppId": "d1fljon3nl9soj"
-    },
-    "categories": {
-      "auth": {
-        "behaviorinformatics280f8562": {}
-      },
-      "function": {
-        "S3Trigger8d51f8c6": {
-          "deploymentBucketName": "amplify-behaviorinformatics-alpha-1b942-deployment",
-          "s3Key": "amplify-builds/S3Trigger8d51f8c6-5561764e67714a515067-build.zip"
-        },
-        "behaviorsLambda": {
-          "deploymentBucketName": "amplify-behaviorinformatics-alpha-1b942-deployment",
-          "s3Key": "amplify-builds/behaviorsLambda-6e585544415145476167-build.zip"
-        },
-        "lambdaAlpha": {
-          "deploymentBucketName": "amplify-behaviorinformatics-alpha-1b942-deployment",
-          "s3Key": "amplify-builds/lambdaAlpha-65327a43785a51445939-build.zip"
-        }
-      },
-      "storage": {
-        "cloudaiinformatics": {}
+        "pythonAgentCloudAIPartners": {}
       }
     }
   }
