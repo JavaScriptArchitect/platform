@@ -24,7 +24,6 @@
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
     "@aws-amplify/api": "^6.0.12",
-    "@aws-amplify/api-graphql": "^6.9.1",
     "@aws-amplify/auth": "^6.0.12",
     "@aws-amplify/storage": "^6.0.12",
     "@aws-amplify/ui-angular": "^5.0.36",

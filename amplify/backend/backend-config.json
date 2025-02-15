@@ -1,25 +1,36 @@
 {
-  "api": {
-    "cloudaiv1api": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "pythonAgentCloudAIPartners"
-        }
-      ],
+  "api": {},
+  "auth": {
+    "cloudaipartners9e89fbea": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
       "providerPlugin": "awscloudformation",
-      "service": "API Gateway"
+      "service": "Cognito"
     }
   },
-  "function": {
-    "pythonAgentCloudAIPartners": {
-      "build": true,
+  "function": {},
+  "storage": {
+    "cloudaipartnersnosqldb": {
       "providerPlugin": "awscloudformation",
-      "service": "Lambda"
+      "service": "DynamoDB"
     }
   }
 }

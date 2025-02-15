@@ -12,8 +12,11 @@
       "AmplifyAppId": "dc6nu1yl406kl"
     },
     "categories": {
-      "function": {
-        "pythonAgentCloudAIPartners": {}
+      "auth": {
+        "cloudaipartners9e89fbea": {}
+      },
+      "storage": {
+        "cloudaipartnersnosqldb": {}
       }
     }
   }

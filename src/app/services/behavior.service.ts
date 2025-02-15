@@ -74,11 +74,11 @@ export class BehaviorService {
       const s3Uri = `s3://${this.s3Bucket}/${fileKey}`;
       console.log('S3 URI:', s3Uri);
 
-      // Ensure sessionId matches the required pattern
+    
       const sessionId = `session_${Date.now()}`.replace(/[^a-zA-Z0-9_.:-]/g, '_');
 
       const inputFile: InputFile = {
-        name: fileKey, // Ensure the name matches the file key
+        name: fileKey, 
         useCase: FileUseCase.CHAT,
         source: {
           sourceType: FileSourceType.S3,

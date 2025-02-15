@@ -23,14 +23,10 @@
     <div class="separation"></div>
 </div>
 
-<div class="result-container" *ngIf="result && fileData">
-  <div class="result-item" *ngIf="fileType === 'image'">
+<div class="result-container" *ngIf="result">
+  <div class="result-item" *ngIf="result.raw_image === 'image'">
     <h3 class="sentiment">Uploaded File</h3>
-    <img [src]="fileData" alt="Uploaded Image" class="result-file" />
-  </div>
-  <div class="result-item" *ngIf="fileType === 'pdf'">
-    <h3 class="sentiment">Uploaded File</h3>
-    <iframe [src]="fileData" class="result-file" style="width: 100%; height: 600px;"></iframe>
+    <img [src]="result.raw_image" alt="Uploaded Image" class="result-file" />
   </div>
   <div class="result-item">
     <h3 class="sentiment">OCR Result</h3>
@@ -52,8 +48,8 @@
         <div>Consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</div>
     </div>
     <div class="secimg">
-        <img src="/ASSETS/IMAGES/TV_NETFLIX.png" alt="">
-        <video src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v" autoplay loop muted></video>
+        <img src="" alt="">
+        <video src="" autoplay loop muted></video>
     </div>
 </section>
 
@@ -61,11 +57,11 @@
 
 <section class="first second">
     <div class="secimg2">
-        <img src="/ASSETS/IMAGES/MOBILE_NETFLIX.jpg" alt="">
+        <img src="" alt="">
     </div>
     <div class="text">
-        <span>Download your shows to watch offline</span>
-        <div>Save your favourites easily and always have something to watch.</div>
+        <span>Download to watch offline</span>
+        <div>.</div>
     </div>
 </section>
 
@@ -73,12 +69,12 @@
 
 <section class="first third">
     <div class="text">
-        <span>Watch Everywhere</span>
-        <div>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</div>
+        <span></span>
+        <div>.</div>
     </div>
     <div class="secimg3">
-        <img src="/ASSETS/IMAGES/DEKSTOP_NETFLIX.png" alt="">
-        <video src="/ASSETS/VIDEOS/VIDEO_NETFLIX.m4v" autoplay loop muted></video>
+        <img src="" alt="">
+        <video src="" autoplay loop muted></video>
     </div>
 </section>
 
@@ -86,11 +82,11 @@
 
 <section class="first fourth">
     <div class="secimg4">
-        <img src="/ASSETS/IMAGES/CHILD_NETFLIX.png" alt="">
+        <img src="" alt="">
     </div>
     <div class="text">
-        <span>Create profiles for kids</span>
-        <span>Send children on adventures with their favourite characters in a space made just for them—free with your membership.</span>
+        <span>Create profiles </span>
+        <span>.</span>
     </div>
 </section>
 
