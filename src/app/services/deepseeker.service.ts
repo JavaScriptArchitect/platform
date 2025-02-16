@@ -6,7 +6,7 @@ import { Observable, catchError } from 'rxjs';
   providedIn: 'root'
 })
 export class DeepSeekingService {
-  private lambdaUrl = 'arn:aws:bedrock:us-west-2:857375868088:imported-model/8hjv92q98u8l';
+  private lambdaUrl = 'https://jx6vsgk5of7flswko5rnk4jjqm0bdyzv.lambda-url.us-west-2.on.aws/';
 
   constructor(private http: HttpClient) {}
 

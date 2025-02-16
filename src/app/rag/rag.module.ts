@@ -58,6 +58,7 @@ import { LongLambdaComponent } from './long-lambda/long-lambda.component';
 import { KnowledgeBaseService } from '@app/services/knowledgebase.service';
 import { LongLambdaService } from '@app/services/longlambda.service';
 import { StorageCloudComponent } from './storage-cloud/storage-cloud.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { StorageCloudComponent } from './storage-cloud/storage-cloud.component';
     KnowledgeComponent,
     LoveComponent,
     LongLambdaComponent,
+    HomeComponent,
     StorageCloudComponent
   ],
   providers: [

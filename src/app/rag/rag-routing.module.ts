@@ -12,7 +12,7 @@ import { StorageCloudComponent } from './storage-cloud/storage-cloud.component';
 
 const routes: Routes = [
 
-  { path: '', component: KnowledgeComponent },
+  { path: '', component: HomeComponent },
   { path: 'sentiment', component: SentimentComponent },
   { path: 'home', component: HomeComponent },
   { path: 'upload', component: StorageCloudComponent },
